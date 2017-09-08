@@ -1,9 +1,11 @@
 ﻿using System;
-namespace WarriorGame
+
+
+namespace WarriorGame.Enum
 {
     enum Faction
     {
         GoodGuy,
-        BadBuy
+        BadGuy
     }
 }
