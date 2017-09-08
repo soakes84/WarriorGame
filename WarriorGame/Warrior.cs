@@ -7,8 +7,8 @@ namespace WarriorGame
 {
     class Warrior
     {
-        private const int GOOD_GUY_STARTING_HEALTH = 100;
-        private const int BAD_GUY_STARTING_HEALTH = 95;
+        private const int GOOD_GUY_STARTING_HEALTH = 80;
+        private const int BAD_GUY_STARTING_HEALTH = 73;
 
         private readonly Faction FACTION;
 
@@ -56,7 +56,7 @@ namespace WarriorGame
 
             AttackResult(enemy, damage);
 
-            Thread.Sleep(100);
+            Thread.Sleep(200);
 		}
             private void AttackResult(Warrior enemy, int damage)
             {
@@ -71,6 +71,7 @@ namespace WarriorGame
                 else
                 {
                     Console.WriteLine($"{name} attacked {enemy.name}. {damage} damage was inflicted, remaining health of {enemy.name} is {enemy.health}");
+                Console.WriteLine("---------------------------");
                 }
             }
     }
