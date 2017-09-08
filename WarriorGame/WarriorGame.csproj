@@ -38,6 +38,7 @@
     <Compile Include="Enum\Faction.cs" />
     <Compile Include="Equipment\Armor.cs" />
     <Compile Include="Equipment\Weapon.cs" />
+    <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enum\" />

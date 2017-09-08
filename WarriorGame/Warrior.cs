@@ -1,6 +1,7 @@
 ﻿using System;
 using WarriorGame.Equipment;
 using WarriorGame.Enum;
+using System.Threading;
 
 namespace WarriorGame
 {
@@ -46,5 +47,31 @@ namespace WarriorGame
                     break;
             }
         }
+
+        public void Attack(Warrior enemy)
+        {
+            int damage = weapon.Damage / enemy.armor.ArmorPoints;
+
+            enemy.health -= damage;
+
+            AttackResult(enemy, damage);
+
+            Thread.Sleep(100);
+		}
+            private void AttackResult(Warrior enemy, int damage)
+            {
+
+
+                if (enemy.health <= 0)
+                {
+                    enemy.isAlive = false;
+                    Tools.ColorfulWriteLine($"{enemy.name} is dead!", ConsoleColor.Red);
+                    Tools.ColorfulWriteLine($"{name} murked him!", ConsoleColor.Green);
+                }
+                else
+                {
+                    Console.WriteLine($"{name} attacked {enemy.name}. {damage} damage was inflicted, remaining health of {enemy.name} is {enemy.health}");
+                }
+            }
     }
 }

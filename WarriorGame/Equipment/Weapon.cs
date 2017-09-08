@@ -5,8 +5,8 @@ namespace WarriorGame.Equipment
 {
     class Weapon
     {
-        private int GOOD_GUY_DAMAGE = 5;
-        private int BAD_GUY_DAMAGE = 5;
+        private int GOOD_GUY_DAMAGE = 25;
+        private int BAD_GUY_DAMAGE = 23;
 
         private int damage;
 
