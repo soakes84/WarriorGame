@@ -5,8 +5,9 @@ namespace WarriorGame.Equipment
     class Armor
     {
 
-        private int GOOD_GUY_ARMOR = 5;
+        private int KING_ARMOR = 5;
         private int BAD_GUY_ARMOR = 5;
+        private int KNIGHT_ARMOR = 10;
 
         private int armorPoints;
 
@@ -22,11 +23,17 @@ namespace WarriorGame.Equipment
         {
             switch (faction)
             {
-                case Faction.GoodGuy:
-                    armorPoints = GOOD_GUY_ARMOR;
+                case Faction.King:
+                    armorPoints = KING_ARMOR;
                     break;
 
                 case Faction.BadGuy:
+                    armorPoints = BAD_GUY_ARMOR;
+                    break;
+                case Faction.Knight:
+                    armorPoints = KNIGHT_ARMOR;
+                    break;
+                case Faction.BadGuyRandom:
                     armorPoints = BAD_GUY_ARMOR;
                     break;
             }

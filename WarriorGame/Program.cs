@@ -9,20 +9,38 @@ namespace WarriorGame
 
         public static void Main(string[] args)
         {
-            Warrior goodGuy = new Warrior("SteveThePirate", Faction.GoodGuy);
+            Warrior king = new Warrior("King SteveThePirate", Faction.King);
             Warrior badGuy = new Warrior("Willie", Faction.BadGuy);
 
-            while (goodGuy.IsAlive && badGuy.IsAlive)
+            Warrior knight = new Warrior("Kelly", Faction.Knight);
+            Warrior badGuyRandom = new Warrior("Brooke", Faction.BadGuyRandom);
+
+
+            while (king.IsAlive && badGuy.IsAlive)
             {
-                if (rng.Next(0,10) < 5)
+                var game = rng.Next(0,20);
+
+                if (game < 10)
                 {
-                    goodGuy.Attack(badGuy);
+                    king.Attack(badGuy);
+                }
+                else if(game >= 10 && game < 18)
+                {
+                    badGuy.Attack(king);
+                }
+                else if (game == 18)
+                {
+                    badGuyRandom.Attack(king);
+                    badGuyRandom.Attack(knight);
                 }
                 else
                 {
-                    badGuy.Attack(goodGuy);
+                    knight.Attack(badGuy);
+                    knight.Attack(badGuyRandom);
                 }
             }
+
+
         }
     }
 }

@@ -5,7 +5,9 @@ namespace WarriorGame.Enum
 {
     enum Faction
     {
-        GoodGuy,
-        BadGuy
+        King,
+        BadGuy,
+        Knight,
+        BadGuyRandom
     }
 }
